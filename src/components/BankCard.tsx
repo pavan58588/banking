@@ -46,7 +46,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
               src="/icon/Paypass.svg"
               width={20}
               height={24}
-              alt="Paypal"
+              alt="Pay"
             />
             <Image
               src="icon/mastercard.svg"

@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <section className="home">
-      <div className="home-content">
+      <div classNa  me="home-content">
         <header className="home-header">
           <HeaderBox
             type="greeting"
