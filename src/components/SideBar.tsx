@@ -3,7 +3,7 @@
 import { Image, Link, Sidebar } from 'lucide-react'
 import React from 'react'
 import { ITEMS, sidebarLinks } from '../../constants'
-import { cn } from '../../lib/utils'
+import { cn } from '../lib/utils'
 import { usePathname } from 'next/navigation'
 
 const SideBar = ({ user}: SiderbarProps) => {
@@ -43,7 +43,7 @@ const SideBar = ({ user}: SiderbarProps) => {
         USER
      </nav>  
 
-     FOOTER
+     <FOOTER user={user} />
     </section>
   )
 }

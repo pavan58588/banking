@@ -1,5 +1,5 @@
 // utils/date.ts
-import { type ClassValue } from "clsx";
+import clsx, { type ClassValue } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
 
