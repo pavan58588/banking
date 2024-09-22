@@ -23,7 +23,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
-import PlaidLink from '@/components/ui/Plaidlink'
+import PlaidLink from '@/components/ui/PlaidLink'
 
 const AuthForm = async ({ type }: { type: string }) => {
   const router = useRouter();
