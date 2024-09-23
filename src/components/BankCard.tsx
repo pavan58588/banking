@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React from "react";
 import { formatAmount } from "./ui/utils";
 import Image from "next/image";
 import Copy from "@/components/Copy";
