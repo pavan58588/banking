@@ -1,22 +1,17 @@
-import HeaderBox from '@/components/HeaderBox'
-
-const Home = ()  => {
-   const loggedIn = {firstName: " Pavan" };
+const HeaderBox = ({ type = "title", title, subtext, user }: HeaderBoxProps) => {
     return (
-        <section className="home">
-            <div className="home-content">
-                <header className="home-header">
-                   <HeaderBox
-                     type ="greeting"
-                     title="Welcome"
-                     user={loggedIn?.firstName || 'Guest'}
-                     subtext="Access and Manage your account and transactions efficiently."
-                    />
-                </header>
-            </div>
-        </section>
-
+      <div className="header-box">
+        <h1 className="header-box-title">
+          {title}
+          {type === 'greeting' && (
+            <span className="text-bankGradient">
+              &nbsp;{user}
+            </span>
+          )}
+        </h1>
+        <p className="header-box-subtext">{subtext}</p>
+      </div>
     )
-}
-
-export default Home
+  }
+  
+  export default HeaderBox

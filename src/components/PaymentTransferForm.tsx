@@ -23,9 +23,9 @@ import {
   FormMessage,
 } from "./ui/form";
 import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+import { Textarea } from "@/components/ui/textarea";
 import CustomInput from "./CustomInput";
-import { createTransfer } from "@/lib/dwolla.actions";
+import { createTransfer } from "@/lib/actions/dwolla.actions";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),

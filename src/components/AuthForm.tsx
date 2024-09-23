@@ -23,13 +23,12 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
-import PlaidLink from '@/components/ui/PlaidLink'
+import PlaidLink from '@/components/PlaidLink';
 
-const AuthForm = async ({ type }: { type: string }) => {
+const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const loggedInUser = await getLoggedInUser();
 
   const formSchema = authFormSchema(type);
 
@@ -91,7 +90,7 @@ const AuthForm = async ({ type }: { type: string }) => {
               src="/icons/logo.svg"
               width={34}
               height={34}
-              alt="Horizon logo"
+              alt="Maze Data Bank"
             />
             <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Horizon</h1>
           </Link>

@@ -33,6 +33,7 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -49,6 +50,7 @@ declare type NewUserParams = {
 };
 
 declare type Account = {
+  data: any;
   id: string;
   availableBalance: number;
   currentBalance: number;
@@ -59,7 +61,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type Transaction = {
@@ -82,14 +84,13 @@ declare type Transaction = {
 };
 
 declare type Bank = {
-  shareableId: any;
   $id: string;
   accountId: string;
   bankId: string;
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type AccountTypes =
@@ -211,6 +212,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: 'mobile' | 'desktop'
 }
 
 declare interface RightSidebarProps {
@@ -221,7 +223,6 @@ declare interface RightSidebarProps {
 
 declare interface SiderbarProps {
   user: User;
-  type?: 'mobile' | 'desktop'
 }
 
 declare interface RecentTransactionsProps {
@@ -314,7 +315,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-  sharableId: string;
+  shareableId: string;
 }
 
 declare interface getBanksProps {

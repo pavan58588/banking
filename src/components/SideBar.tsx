@@ -1,53 +1,60 @@
-"use client"
+'use client'
 
-import { Image, Link, Sidebar } from 'lucide-react'
-import React from 'react'
-import { ITEMS, sidebarLinks } from '../../constants'
-import { cn } from '../lib/utils'
+import { sidebarLinks } from '@/constants'
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Footer from './Footer'
-import { PlaidLink } from 'react-plaid-link'
+import PlaidLink from './PlaidLink'
 
-const SideBar = ({ user}: SiderbarProps) => {
+const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
+
   return (
-    <section className='SideBar'>
-     <nav className='flex flex-col gap-4'>
-        <Link href='/' className='mb-12 cursor-pointer items-center gap-2'>
-          <Image
-            src ="/icons/logo.svg"
+    <section className="sidebar">
+      <nav className="flex flex-col gap-4">
+        <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2">
+          <Image 
+            src="/icons/logo.svg"
             width={34}
             height={34}
-            alt="Master in"
+            alt="Horizon logo"
             className="size-[24px] max-xl:size-14"
           />
-          <h1 className="sidebar-logo">DataMaze</h1>
+          <h1 className="sidebar-logo">Horizon</h1>
         </Link>
-        {sidebarLinks.map((item) => {
-         const isActive = pathname === item.route || pathname.startsWith('${item.route}/')
 
-            return (
-              <Link href={item.route} key={item.label} className={cn('Sidebar-link',{'bg-bank-gradient':isActive})}>
+        {sidebarLinks.map((item) => {
+          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
+
+          return (
+            <Link href={item.route} key={item.label}
+              className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
+            >
               <div className="relative size-6">
-                <Image
+                <Image 
                   src={item.imgURL}
                   alt={item.label}
                   fill
+                  className={cn({
+                    'brightness-[3] invert-0': isActive
+                  })}
                 />
-              <div>
-              <p className={cn("sidebar-label", isActive && "text-white")}>{item.label}</p>
               </div>
-
-                </div>
-              </Link>
+              <p className={cn("sidebar-label", { "!text-white": isActive })}>
+                {item.label}
+              </p>
+            </Link>
           )
         })}
+        
         <PlaidLink user={user} />
-     </nav>  
+      </nav>
 
-     <Footer user={user} />
+      <Footer user={user} />
     </section>
   )
 }
 
-export default SideBar
+export default Sidebar

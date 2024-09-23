@@ -9,7 +9,7 @@ import {
   } from "@/components/ui/table"
 //   import { transactionCategoryStyles } from "@/constants"
   import { cn, formatAmount, formatDateTime, getTransactionStatus, removeSpecialCharacters } from "@/lib/utils"
-import { transactionCategoryStyles } from "../../constants"
+import { transactionCategoryStyles } from "../constants"
   
   const CategoryBadge = ({ category }: CategoryBadgeProps) => {
     const {

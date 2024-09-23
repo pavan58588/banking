@@ -1,28 +1,21 @@
 "use client"
 
-import { useSearchParams, useNavigate } from 'next/navigation';
+import { useSearchParams, useRouter } from "next/navigation";
 import { cn, formUrlQuery } from '@/lib/utils';
 
-export interface BankTabItemProps {
-  account: {
-    name: string;
-    appwriteItemId: string;
-  };
-  appwriteItemId: string;
-}
 
 export const BankTabItem = ({ account, appwriteItemId }: BankTabItemProps) => {
   const searchParams = useSearchParams();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isActive = appwriteItemId === account?.appwriteItemId;
 
   const handleBankChange = () => {
     const newUrl = formUrlQuery({
       params: searchParams.toString(),
-      key: 'id',
+      key: "id",
       value: account?.appwriteItemId,
     });
-    navigate(newUrl, { scroll: false });
+    router.push(newUrl, { scroll: false });
   };
 
   return (

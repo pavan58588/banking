@@ -2,19 +2,8 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 import { formatAmount } from "./ui/utils";
 import Image from "next/image";
-import Copy from "./copy";
+import Copy from "@/components/Copy";
 
-interface CreditCardProps {
-  account: {
-    shareableId: any;
-    data: any;
-    mask: ReactNode;
-    name: string;
-    currentBalance: number;
-  };
-  userName: string;
-  showBalance?: boolean;
-}
 
 const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
   console.log(account);
@@ -59,18 +48,17 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
               alt="mastercard"
               className="ml-5"
             />
-        </div>
-        <Image
-           src="/icons/lines.png"
-           width={316}
-           height={190}
-           alt="lines"
-           className="absolute top-0 left-0"/>
-      </Link> 
+            </div>
+            <Image
+             src="/icons/lines.png"
+             width={316}
+             height={190}
+             alt="lines"
+             className="absolute top-0 left-0"/>
+            </Link> 
 
-      {showBalance && <Copy title={account?.
-      shareableId} />}
-    </div>
+            {showBalance && <Copy title={account?.shareableId} />}
+          </div>
   )
 }
 

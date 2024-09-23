@@ -1,9 +1,5 @@
-// import React from 'react'
-// import { formatAmount } from '../../../lib/utils'
-// import CountUp from 'react-countup';
-import { Doughnut } from 'react-chartjs-2';
-import AnimatedCounter from '../AnimatedCounter';
-import DoughnutChart from '../DoughnutChart';
+import AnimatedCounter from './AnimatedCounter';
+import DoughnutChart from './DoughnutChart';
 
 const TotalBalanceBox = ({
  accounts = [], totalBanks, totalCurrentBalance   
