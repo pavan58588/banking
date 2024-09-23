@@ -1,4 +1,4 @@
-import HeaderBox from '@/components/headerbox'
+import HeaderBox from '@/components/HeaderBox'
 
 const Home = ()  => {
    const loggedIn = {firstName: " Pavan" };
@@ -7,7 +7,7 @@ const Home = ()  => {
             <div className="home-content">
                 <header className="home-header">
                    <HeaderBox
-                     type="greeting"
+                     type ="greeting"
                      title="Welcome"
                      user={loggedIn?.firstName || 'Guest'}
                      subtext="Access and Manage your account and transactions efficiently."

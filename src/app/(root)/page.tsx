@@ -1,7 +1,7 @@
 import HeaderBox from '@/components/HeaderBox'
 import RecentTransactions from '@/components/RecentTransactions';
 import RightSidebar from '@/components/ui/RightSidebar';
-import TotalBalanceBox from '@/components/TotalBalanceBox';
+import TotalBalanceBox from '@/components/ui/TotalBalanceBox';
 import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 
@@ -33,7 +33,8 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
           <TotalBalanceBox 
             accounts={accountsData}
             totalBanks={accounts?.totalBanks}
-            totalCurrentBalance={accounts?.totalCurrentBalance}
+            totalCurrentBalance={accounts?.
+            totalCurrentBalance}
           />
         </header>
 

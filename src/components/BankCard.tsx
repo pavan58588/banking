@@ -2,9 +2,12 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 import { formatAmount } from "./ui/utils";
 import Image from "next/image";
+import Copy from "./copy";
 
 interface CreditCardProps {
   account: {
+    shareableId: any;
+    data: any;
     mask: ReactNode;
     name: string;
     currentBalance: number;
@@ -14,9 +17,10 @@ interface CreditCardProps {
 }
 
 const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
+  console.log(account);
   return (
     <div className="flex flex-col">
-      <Link href="/" className="bank-card">
+      <Link href={"/transaction-history/?id=${account.appwriteItemId}"} className="bank-card">
         <div className="bank-card_content">
           <div>
             <h1 className="text-16 font-semibold text-white">
@@ -37,7 +41,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
                  {userName}
             </div>
             <p className="text-14 font-semibold tracking-[1.1px] text-white">●●●● ●●●● ●●●●
-                <span className="text-16">{1432}</span>
+                <span className="text-16">{account?.data?.mask}</span>
             </p>
            </article>     
         </div>
@@ -64,7 +68,8 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
            className="absolute top-0 left-0"/>
       </Link> 
 
-      {/* copy */}
+      {showBalance && <Copy title={account?.
+      shareableId} />}
     </div>
   )
 }
