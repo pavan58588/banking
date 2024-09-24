@@ -26,6 +26,7 @@ const totalPages = Math.ceil(account?.transactions.length / rowsPerPage);
 const indexOfLastTransaction = currentPage * rowsPerPage;
 const indexOfFirstTransaction = indexOfLastTransaction - rowsPerPage;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const currentTransactions = account?.transactions.slice(
   indexOfFirstTransaction, indexOfLastTransaction
 )
