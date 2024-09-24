@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use server";
 
 import {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ACHClass,
   CountryCode,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   TransferAuthorizationCreateRequest,
   TransferCreateRequest,
   TransferNetwork,

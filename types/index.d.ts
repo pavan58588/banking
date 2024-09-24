@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
@@ -51,7 +50,7 @@ declare type NewUserParams = {
 };
 
 declare type Account = {
-  data: any;
+  data: unknown;
   id: string;
   availableBalance: number;
   currentBalance: number;
@@ -196,7 +195,7 @@ declare interface AuthFormProps {
 
 declare interface BankDropdownProps {
   accounts: Account[];
-  setValue?: UseFormSetValue<any>;
+  setValue?: UseFormSetValue<unknown>;
   otherStyles?: string;
 }
 

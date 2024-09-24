@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { headers } from "next/headers";
 import { Configuration, PlaidApi, PlaidEnvironments } from "plaid";
 
 const plaidConfig: Configuration = new Configuration({
